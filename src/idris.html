@@ -38,18 +38,31 @@
 <body class="bg-white dark:bg-gray-900 transition-colors duration-200">
     <nav class="w-[100%] py-[30px] bg-white dark:bg-gray-800 transition-colors duration-200">
         <section class="w-[80%] m-auto flex items-center justify-between">
-            <p class="bg-blue-500 dark:bg-blue-600 py-[5px] px-[20px] rounded-[20px] text-white font-bold">Home</p>
-            <p class="text-black dark:text-white">IDE</p>
-            <p class="text-black dark:text-white">Resources</p>
-            <select name="role" id="role"
-                class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white py-[5px] px-[10px] rounded-[8px] border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-200">
-                <option value="students" selected>Students</option>
-                <option value="teachers">Teachers</option>
-                <option value="pupils">Pupils</option>
-            </select>
-            <p class="text-black dark:text-white">Partners</p>
-            <p class="text-black dark:text-white">About</p>
-            <p class="text-black dark:text-white">Support</p>
+            <div class="hidden w-[80%] m-auto sm:flex items-center justify-between">
+                <a href="./idris.html" target="_self">
+                    <p class="bg-blue-500 dark:bg-blue-600 py-[5px] px-[20px] rounded-[20px] text-white font-bold">Home
+                    </p>
+                </a>
+                <p class="text-black dark:text-white">IDE</p>
+                <a href="./resources.html" target="_self">
+                    <p class="text-black dark:text-white">Resources</p>
+                </a>
+                <select name="role" id="role"
+                    class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white py-[5px] px-[10px] rounded-[8px] border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-200">
+                    <option value="students" selected>Students</option>
+                    <option value="teachers">Teachers</option>
+                    <option value="pupils">Pupils</option>
+                </select>
+                <a href="./partners.html" target="_self">
+                    <p class="text-black dark:text-white">Partners</p>
+                </a>
+                <a href="./about.html" target="_self">
+                    <p class="text-black dark:text-white">About</p>
+                </a>
+                <a href="./support.html" target="_self">
+                    <p class="text-black dark:text-white">Support</p>
+                </a>
+            </div>
             <div class="flex items-center gap-[10px]">
                 <button onclick="toggleDarkMode()"
                     class="px-[10px] py-[5px] rounded-[8px] bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-200">
@@ -60,40 +73,71 @@
                     class="text-white bg-blue-500 dark:bg-blue-600 py-[5px] px-[10px] rounded-[8px] font-bold flex items-center gap-[5px]">
                     <img src="./icons/user.png" alt=""> Login
                 </button>
+                <button onclick="toggleDarkMode()"
+                    class="px-[10px] py-[5px] rounded-[8px] bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-200">
+                    <img src="./icons/usa.png" alt="">
+                </button>
+            </div>
+            <div class="sm:hidden">
+                <button id="mobileMenuButton" class="text-black dark:text-white text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </section>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobileMenu" class="hidden sm:hidden w-full bg-white dark:bg-gray-800 transition-all duration-300 shadow-md">
+            <div class="w-[80%] mx-auto py-4 flex flex-col gap-4">
+                <a href="./idris.html" target="_self" class="block">
+                    <p class="bg-blue-500 dark:bg-blue-600 py-[5px] px-[20px] rounded-[20px] text-white font-bold text-center">Home</p>
+                </a>
+                <a href="#" class="block py-2 text-black dark:text-white text-center border-b border-gray-200 dark:border-gray-700">IDE</a>
+                <a href="./resources.html" target="_self" class="block py-2 text-black dark:text-white text-center border-b border-gray-200 dark:border-gray-700">Resources</a>
+                <div class="py-2 text-center border-b border-gray-200 dark:border-gray-700">
+                    <select name="mobile-role" id="mobile-role"
+                        class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white py-[5px] px-[10px] rounded-[8px] border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-200 w-3/4">
+                        <option value="students" selected>Students</option>
+                        <option value="teachers">Teachers</option>
+                        <option value="pupils">Pupils</option>
+                    </select>
+                </div>
+                <a href="./partners.html" target="_self" class="block py-2 text-black dark:text-white text-center border-b border-gray-200 dark:border-gray-700">Partners</a>
+                <a href="./about.html" target="_self" class="block py-2 text-black dark:text-white text-center border-b border-gray-200 dark:border-gray-700">About</a>
+                <a href="./support.html" target="_self" class="block py-2 text-black dark:text-white text-center">Support</a>
+            </div>
+        </div>
     </nav>
     <section class="w-[90%] m-auto">
         <p class="text-blue-950 font-bold text-[30px] dark:text-blue-400 mt-[20px]">Software Development</p>
-        <article class="flex items-start justify-between mt-[20px]">
+        <article class="flex flex-col sm:flex sm:flex-row gap-[20px] items-start justify-between mt-[20px]">
             <div data-aos="fade-right" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/frontend.jpg" alt="programming-languages" class="w-[100%] h-[190px] rounded-[10px]">
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/frontend.jpg" alt="programming-languages" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Front-End
                 </p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
             <div data-aos="fade-up" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/backend.webp" alt="Cybersecurity" class="w-[100%] h-[190px] rounded-[10px]">
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/backend.webp" alt="Cybersecurity" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">
                     Back-End</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/mobile.jpeg" alt="Artificial Intelligence" class="w-[100%] h-[190px] rounded-[10px]">
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/mobile.jpeg" alt="Artificial Intelligence" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Mobile
                     Development</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
@@ -101,37 +145,37 @@
             </div>
         </article>
         <p class="text-blue-950 font-bold text-[30px] dark:text-blue-400 mt-[20px]">Cybersecurity</p>
-        <article class="flex items-start justify-between mt-[20px]">
-            <div data-aos="fade-right" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+        <article class="flex flex-col sm:flex sm:flex-row gap-[20px] items-start justify-between mt-[20px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/penetration.png" alt="programming-languages"
-                    class="w-[100%] h-[190px] rounded-[10px]">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Penetration
                     Testing</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border ">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/linux.jpg" alt="Cybersecurity" class="w-[100%] h-[190px] rounded-[10px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/linux.jpg" alt="Cybersecurity" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">
                     Linux</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/cybersecurity.jpg" alt="Artificial Intelligence"
-                    class="w-[100%] h-[190px] rounded-[10px]">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Network
                     Security</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
@@ -139,36 +183,36 @@
             </div>
         </article>
         <p class="text-blue-950 font-bold text-[30px] dark:text-blue-400 mt-[20px]">Artificial Intelligence</p>
-        <article class="flex items-start justify-between mt-[20px]">
-            <div data-aos="fade-right" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/ai.png" alt="programming-languages" class="w-[100%] h-[190px] rounded-[10px]">
+        <article class="flex flex-col sm:flex sm:flex-row gap-[20px] items-start justify-between mt-[20px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/ai.png" alt="programming-languages" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Machine
                     Learning</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/llms.jpg" alt="Cybersecurity" class="w-[100%] h-[190px] rounded-[10px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/llms.jpg" alt="Cybersecurity" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">
                     LLMs</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/neuralnetworks.png" alt="Artificial Intelligence"
-                    class="w-[100%] h-[190px] rounded-[10px]">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Neural
                     Networks</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
@@ -176,36 +220,36 @@
             </div>
         </article>
         <p class="text-blue-950 font-bold text-[30px] dark:text-blue-400 mt-[20px]">Data Management</p>
-        <article class="flex items-start justify-between mt-[20px]">
-            <div data-aos="fade-right" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+        <article class="flex flex-col sm:flex sm:flex-row gap-[20px] items-start justify-between mt-[20px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/postgresql.png" alt="programming-languages"
-                    class="w-[100%] h-[190px] rounded-[10px]">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">PostgreSQL
                 </p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/redis.png" alt="Cybersecurity" class="w-[100%] h-[190px] rounded-[10px] bg-white">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/redis.png" alt="Cybersecurity" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px] bg-white">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">
                     Redis</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/kafka.png" alt="Artificial Intelligence"
-                    class="w-[100%] h-[190px] rounded-[10px] bg-white">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px] bg-white">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Kafka</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
@@ -213,35 +257,35 @@
             </div>
         </article>
         <p class="text-blue-950 font-bold text-[30px] dark:text-blue-400 mt-[20px]">DevOps</p>
-        <article class="flex items-start justify-between mt-[20px]">
-            <div data-aos="fade-right" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/Git.png" alt="programming-languages" class="w-[100%] h-[190px] rounded-[10px]">
+        <article class="flex flex-col sm:flex sm:flex-row gap-[20px] items-start justify-between mt-[20px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/Git.png" alt="programming-languages" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Git</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
-                <img src="./images/docker.png" alt="Cybersecurity" class="w-[100%] h-[190px] rounded-[10px]">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+                <img src="./images/docker.png" alt="Cybersecurity" class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">
                     Docker</p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
                 </div>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000"
-                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
+            <div
+                class="border dark:border-gray-700 bg-[#F8F8F8] dark:bg-gray-800 shadow-lg dark:shadow-gray-900 w-[100%] sm:w-[30%] rounded-[20px] p-[20px] transition-colors duration-200">
                 <img src="./images/Kubernetes.jpg" alt="Artificial Intelligence"
-                    class="w-[100%] h-[190px] rounded-[10px]">
+                    class="w-[100%] h-[250px] sm:h-[190px] rounded-[10px]">
                 <p class="text-[20px] font-bold text-center mt-[20px] mb-[20px] text-black dark:text-white">Kubernetes
                 </p>
-                <div class="w-[40%] m-auto">
+                <div class="w-[32%] sm:w-[40%] m-auto">
                     <button
                         class="text-white font-bold bg-green-500 dark:bg-green-600 py-[10px] px-[20px] rounded-[8px] hover:text-green-700 dark:hover:text-green-400 hover:bg-white dark:hover:bg-gray-700 hover:border">Get
                         Started</button>
@@ -249,45 +293,67 @@
             </div>
         </article>
     </section>
-    <footer class="w-[100%] mt-[100px] py-[30px] bg-gradient-to-b from-gray-100/80 to-gray-200/80 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 transition-colors duration-200">
+    <footer
+        class="w-[100%] mt-[100px] py-[30px] bg-gradient-to-b from-gray-100/80 to-gray-200/80 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 transition-colors duration-200">
         <section class="w-[90%] m-auto flex flex-wrap items-start justify-around">
             <div class="w-[30%] mb-[20px]">
                 <img src="./icons/footerlogo.png" alt="IT Portal Logo" class="w-[70%] max-w-[200px]">
-                <p class="text-gray-700 dark:text-gray-300 mt-[15px]">Empowering the next generation of tech professionals with quality education and resources.</p>
+                <p class="text-gray-700 dark:text-gray-300 mt-[15px]">Empowering the next generation of tech
+                    professionals with quality education and resources.</p>
             </div>
-            <div class="mb-[20px] px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm">
+            <div
+                class="mb-[20px] px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm">
                 <h3 class="font-bold text-blue-950 dark:text-blue-400 mb-[15px] text-[18px]">Quick Links</h3>
                 <ul class="text-gray-700 dark:text-gray-300 text-[16px]">
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">Home</li>
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">IDE</li>
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">Resources</li>
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">Students</li>
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">Partners</li>
-                    <li class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">About Us</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        Home</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        IDE</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        Resources</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        Students</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        Partners</li>
+                    <li
+                        class="mb-[8px] hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                        About Us</li>
                 </ul>
             </div>
             <div class="mb-[20px]">
-                <div class="px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm mb-[20px]">
+                <div
+                    class="px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm mb-[20px]">
                     <h3 class="font-bold text-blue-950 dark:text-blue-400 mb-[15px] text-[18px]">Connect With Us</h3>
                     <div class="flex items-center gap-[15px]">
-                        <a href="https://instagram.com/itportal.tj" class="hover:opacity-80 transition-opacity duration-200">
-                            <div class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
+                        <a href="https://instagram.com/itportal.tj"
+                            class="hover:opacity-80 transition-opacity duration-200">
+                            <div
+                                class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
                                 <i class="fa-brands fa-instagram text-white text-[20px]"></i>
                             </div>
                         </a>
                         <a href="https://t.me/itportaltj" class="hover:opacity-80 transition-opacity duration-200">
-                            <div class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
+                            <div
+                                class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
                                 <i class="fa-brands fa-telegram text-white text-[20px]"></i>
                             </div>
                         </a>
-                        <a href="https://github.com/MarkMaximus/ITPortal" class="hover:opacity-80 transition-opacity duration-200">
-                            <div class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
+                        <a href="https://github.com/MarkMaximus/ITPortal"
+                            class="hover:opacity-80 transition-opacity duration-200">
+                            <div
+                                class="w-[40px] h-[40px] bg-gradient-to-r from-blue-500/80 to-blue-600/80 dark:from-blue-600/80 dark:to-blue-700/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-sm">
                                 <i class="fa-brands fa-github text-white text-[20px]"></i>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm">
+                <div
+                    class="px-[20px] py-[15px] bg-white/30 dark:bg-gray-800/30 rounded-xl backdrop-blur-sm border border-white/40 dark:border-gray-700/40 shadow-sm">
                     <h3 class="font-bold text-blue-950 dark:text-blue-400 mb-[10px] text-[18px]">Contact Us</h3>
                     <p class="text-gray-700 dark:text-gray-300 font-medium">support@itportal.tj</p>
                     <p class="text-gray-600 dark:text-gray-400 text-[14px]">We welcome your feedback and suggestions</p>
@@ -296,15 +362,54 @@
         </section>
         <div class="w-[90%] m-auto mt-[30px] pt-[20px] border-t border-gray-200/50 dark:border-gray-700/50">
             <div class="flex flex-wrap items-center justify-between">
-                <p class="text-gray-700 dark:text-gray-300 text-[14px]">© IT PORTAL Tajikistan 2025. All Rights Reserved.</p>
-                <div class="flex items-center gap-[20px] text-[14px] text-gray-600 dark:text-gray-400 mt-[10px] md:mt-0">
-                    <a href="#" class="hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200">Privacy Policy</a>
-                    <a href="#" class="hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200">Terms of Service</a>
+                <p class="text-gray-700 dark:text-gray-300 text-[14px]">© IT PORTAL Tajikistan 2025. All Rights
+                    Reserved.</p>
+                <div
+                    class="flex items-center gap-[20px] text-[14px] text-gray-600 dark:text-gray-400 mt-[10px] md:mt-0">
+                    <a href="#"
+                        class="hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200">Terms of
+                        Service</a>
                 </div>
             </div>
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Add this to your existing script tag or in a new one before the closing body tag
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+        // Toggle the mobile menu visibility
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('block');
+            // Change icon to X
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+            // Change back to bars icon
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+    });
+    
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', function(event) {
+        if (!mobileMenuButton.contains(event.target) && 
+            !mobileMenu.contains(event.target) && 
+            !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+    });
+});
+    </script>
     <script>
         AOS.init();
     </script>

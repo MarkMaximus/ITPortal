@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+<<<<<<< HEAD
 .box1{
     background-image: url(./images/tekhnologichnyi-fon-170.webp);
     height: 100vh;
     background-position: center;
     background-size: cover;
 }
+=======
+
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> 3226cff51c218f11c79fcba90080fe26ead7f356
+>>>>>>> cbab80000ff7e09038ba8401b1ab6753bec3d8da

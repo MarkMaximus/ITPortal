@@ -9,7 +9,6 @@
     <link rel="icon" href="icons/icon.png">
     <link rel="stylesheet" href="./fontawesome-free-6.7.2-web (3)/fontawesome-free-6.7.2-web/css/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./output.css">
     <script>
         function toggleDarkMode() {
             const html = document.documentElement;
@@ -35,11 +34,31 @@
         });
     </script>
 </head>
-<body>
+<body class="box1 mb-[150px]">
     
-     <div class="border-2 h-[40vh] w-[40%] m-auto">
+       <div class="mt-[30px] mb-[170px] opacity-4">
+        <h1 class="text-center font-bold text-2xl text-red-500">Добро Пожаловат</h1>
+       <div class="border-2 h-[95vh] w-[25%] m-auto rounded-xl mt-[40px] ">
+           <form class="flex flex-col pb-[25px]" action="./fahim.html" method="get">
+               <h2 class="text-center py-[10px] text-[25px] font-[700]">Регистрация</h2>
+               <label class="ml-[30px] font-bold" for="name">Имя :</label><br>
+               <input class="border-2 w-[320px] m-auto rounded-md p-[5px] font-bold" required type="text" id="name" placeholder="Name"><br>
+               <label class="ml-[30px] font-bold" for="surname">Фамилия :</label><br>
+               <input class="border-2 w-[320px] m-auto rounded-md p-[5px] font-bold" required type="text" id="surname" placeholder="Surname"><br>
+               <label class="ml-[30px] font-bold" for="email">Электронная почта :</label><br>
+               <input class="border-2 w-[320px] m-auto rounded-md p-[5px] font-bold" required type="email" id="email" placeholder="Gmail"><br>
+               <label class="ml-[30px] font-bold" for="acountname">Имя Акаунта :</label><br>
+               <input class="border-2 w-[320px] m-auto rounded-md p-[5px] font-bold" required type="text" id="acountname" placeholder="Account Name"><br>
+               <label class="ml-[30px] font-bold" for="parol">Парол :</label><br>
+               <input class="border-2 w-[320px] m-auto rounded-md p-[5px] font-bold" required type="password" id="parol" placeholder="Pasword"><br>
+            <button class="border-2 w-[250px] m-auto p-[5px] ml-[60px] rounded-md mt-[15px] py-[8px] font-bold bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white">Зарегистрироваться</button>
+           </form>
+       </div>
+    </div>
+       
          
-     </div>
+    
 
 
 </body>
+</html>

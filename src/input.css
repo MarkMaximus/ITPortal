@@ -3,4 +3,9 @@
 @tailwind utilities;
 
 
-
+.box1{
+    background-image: url(./images/tekhnologichnyi-fon-170.webp);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
